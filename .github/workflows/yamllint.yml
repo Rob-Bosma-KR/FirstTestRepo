@@ -1,3 +1,4 @@
+# Action Info: https://github.com/marketplace/actions/yamllint-github-action
 name: 'Yamllint GitHub Actions'
 on:
   - pull_request
@@ -11,7 +12,7 @@ jobs:
       - name: 'Yamllint'
         uses: karancode/yamllint-github-action@master
         with:
-          yamllint_file_or_dir: '<yaml_file_or_dir>'
+          # yamllint_file_or_dir: '<yaml_file_or_dir>'
           yamllint_strict: false
           yamllint_comment: true
         env:
