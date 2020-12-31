@@ -8,9 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@master
+        #uses: actions/checkout@master
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: 'Get changed file names'
-        
+        id: checkForChanges
+        run: |
+          echo "::set-output name=grepValue::$( git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -c '^proxy' )"
       - name: 'Yamllint'
         uses: karancode/yamllint-github-action@master
         with:
