@@ -1,0 +1,3 @@
+this: "is"
+good: "yaml"
+that: "was committed after bad" # does this merge OK?
